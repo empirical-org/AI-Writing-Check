@@ -38,16 +38,17 @@
       <p>To check responses longer than 400 words, you must separate the text into individual sections.</p>
     </div>
     <div class='form-section p-5 mb-6'>
-      <textarea class='textarea' placeholder='Enter text here' rows=15></textarea>
+      <form id="js-form">
+      <textarea id="js-textBox" class='textarea' placeholder='Enter text here' rows=15></textarea>
       <div class='columns mt-4'>
-        <div class='column is-two-thirds'>
-          <div class='columns counters'>
-            <div class='column minimum-words'>
+        <div class='column is-two-thirds p-2'>
+          <div id="js-counters" class='columns counters'>
+            <div class='column'>
               <div class='title mb-0'>100</div>
               <div class='description'>Minimum words required</div>
             </div>
-            <div class='column current-words'>
-              <div class='title mb-0'>0</div>
+            <div class='column'>
+              <div id="js-wordCount" class='title mb-0'>0</div>
               <div class='description'>Current words</div>
             </div>
             <div class='column max-words'>
@@ -58,10 +59,12 @@
         </div>
 
         <div class='column is-one-third '>
-          <button class='button is-primary is-large is-pulled-right'>Check Text</button>
+          <input type="submit" id="js-submitButton" class='button is-primary is-large is-pulled-right' value="Check Text"
+          />
         </div>
+        </form>
       </div>
-      <div class='columns'>
+      <div class='columns mt-4'>
         <div class='column js-feedbacks'>
           <div id="js-warning" class="js-feedback p-5 warning content">
             <p>This free tool has no guaranteed uptime or support. It may not be available when there is heavy demand.</p>

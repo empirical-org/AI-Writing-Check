@@ -29,6 +29,25 @@ header {
 .textarea {
   border: none;
 }
+.errorBox {
+  color: rgba(235, 79, 71, 1);
+  background-color: rgba(235, 79, 71, 0.1);
+  border: 1px solid rgba(235, 79, 71, 0.54);
+}
+
+.errorBox .title {
+  color: rgba(235, 79, 71, 1);
+}
+
+.validBox {
+  border: 1px solid rgba(0, 194, 162, 1);
+  color: rgba(0, 194, 162, 1);
+  background-color: rgba(0, 194, 162, 0.1);
+}
+
+.validBox .title {
+  color: rgba(0, 194, 162, 1);
+}
 
 .form-section {
   background: #FFFFFF;
@@ -46,7 +65,7 @@ footer a {
 }
 
 .counters {
-  border-radius: 16px;
+  border-radius: 10px;
 }
 
 .processing {
