@@ -11,11 +11,19 @@ button {
   border
 }
 
-.navbar {
+header {
   background: #00C2A2;
 }
 .white-text {
   color: #fff;
+}
+
+.white-bar {
+  vertical-align: center;
+  font-size: 36px;
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .textarea {
@@ -26,5 +34,17 @@ button {
   background: #FFFFFF;
   border: 1px solid #DCDCDC;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+}
+footer {
+  background-color: #fff;
+}
+footer a {
+  display: inline;
+  margin-left: 30px;
+  color: #363636;
+}
+
+.counters {
   border-radius: 16px;
 }

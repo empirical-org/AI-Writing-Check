@@ -8,24 +8,26 @@
   <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-  <header class='navbar green'>
-    <div class='container m-6'>
+  <header class='green py-6'>
+    <div class='container'>
       <div class='columns'>
-        <div class="column is-half">
+        <div class="column is-4">
           <div class='title is-2 white-text'>AI Writing Check</div>
         </div>
-        <div class='column white-text'>
+        <div class='column is-3 white-text has-text-right content has-text-left-mobile'>
           <p>A free service provided
           by the nonprofit organizations
           <p>
         </div>
-        <div class='column logos'>
-          <div class='logo quill'></div>
-          <div class='logo common-lit'></div>
+        <div class='column'>
+          <img src="../static/images/quill.svg" alt="Quill.org logo">
         </div>
+        <div class='column'>
+          <img src="../static/images/common_lit.svg" alt="CommonLit logo">
+        </div>
+
       </div>
     </div>
-
   </header>
   <main class='container m-6'>
     <div class='intro my-6'>
@@ -37,23 +39,33 @@
     </div>
     <div class='form-section p-5 mb-6'>
       <textarea class='textarea' placeholder='Enter text here' rows=15></textarea>
-      <div class='middle'>
-        <div class='counts level'>
-          <div class='level-item minimum-words'>
-            <div class='number'>100</div>
-            <div class='description'>Minimum words required</div>
-          </div>
-          <div class='level-item current-words'>
-            <div class='number'>0</div>
-            <div class='description'>Current words</div>
-          </div>
-          <div class='level-item max-words'>
-            <div class='number'>400</div>
-            <div class='description'>Mac words</div>
+      <div class='columns mt-4'>
+        <div class='column is-two-thirds'>
+          <div class='columns counters'>
+            <div class='column minimum-words'>
+              <div class='title mb-0'>100</div>
+              <div class='description'>Minimum words required</div>
+            </div>
+            <div class='column current-words'>
+              <div class='title mb-0'>0</div>
+              <div class='description'>Current words</div>
+            </div>
+            <div class='column max-words'>
+              <div class='title mb-0'>400</div>
+              <div class='description'>Max words</div>
+            </div>
           </div>
         </div>
 
-          <button class='button is-primary is-large'>Check Text</button>
+        <div class='column is-one-third '>
+          <button class='button is-primary is-large is-pulled-right'>Check Text</button>
+        </div>
+      </div>
+      <div class='columns'>
+        <div class='column'>
+          This free tool has no guaranteed uptime or support. It may not be available when there is heavy demand.
+        </div>
+
       </div>
     </div>
     <section class='content mt-6'>
@@ -101,17 +113,18 @@
       <p class='buttons'>
         <a href="" class='button'>Reach Out - Contact Us</a>
       </p>
-      <hr/>
     </section>
   </main>
   <footer class='footer'>
-    <div class='copyright is-2'>&copy; 2023 Empirical Resolution Inc.</div>
-    <a href="">Terms</a>
-    <a href="">Privacy</a>
-    <a href="">Visit Quill.org</a>
-    <a href="">Visit CommonLit.org</a>
+    <div class='container content'>
+      <span class='copyright is-5'>&copy; 2023 Empirical Resolution Inc.</span>
+      <a href="">Terms</a>
+      <a href="">Privacy</a>
+      <a href="">Visit Quill.org</a>
+      <a href="">Visit CommonLit.org</a>
 
-    <p>AIWritingCheck.org is provided by the 501(c)3 nonprofit Empirical Resolution Inc. (Quill.org) and built with support from CommonLit.</p>
+      <p class="mt-5">AIWritingCheck.org is provided by the 501(c)3 nonprofit Empirical Resolution Inc. (Quill.org) and built with support from CommonLit.</p>
+    </div>
   </footer>
 
 </body>
