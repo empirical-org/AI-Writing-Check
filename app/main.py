@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/classify', methods=['POST'])
 def classify():
-    endpoint = aiplatform.Endpoint('projects/403196473957/locations/us-central1/endpoints/3295390280072560640')
+    endpoint = aiplatform.Endpoint('projects/403196473957/locations/us-central1/endpoints/2125791383095607296')
 
     input_text = request.json.get('instances')[0].get('data')
 

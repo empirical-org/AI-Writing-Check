@@ -87,6 +87,10 @@ em {
             <td id="fake-percentage" style="text-align: right; vertical-align: bottom;"></td>
         </tr>
     </table></div>
+    <p id='feedback'>
+    </p>
+    <p id='input_text'>
+    </p>
 </div>
 <script>
 let textbox = document.getElementById('textbox');
@@ -96,6 +100,7 @@ let real_percentage = document.getElementById('real-percentage');
 let fake_percentage = document.getElementById('fake-percentage');
 let bar = document.getElementById('bar');
 let message = document.getElementById('message');
+let feedback = document.getElementById('feedback')
 
 function update_graph(result) {
     if (result === null) {
@@ -103,6 +108,8 @@ function update_graph(result) {
         fake_percentage.innerHTML = '';
         bar.style.width = '50%';
         message.innerHTML = '';
+        feedback.innerHTML = '';
+        input_text.inputText = '';
     } else {
         let percentage = result['score']
         let label = result['label']
@@ -112,6 +119,13 @@ function update_graph(result) {
         }
         else {
             message.innerHTML = 'This text was likely written by a human.';
+        }
+
+        if (result['tokens'] < 512) {
+            feedback.innerHTML = 'The model looked at the full text.'
+        }
+        else {
+            feedback.innerHTML = 'The text was too long for the model to process. It looked at the following part: <br/><br/>' + result['text'];
         }
 
         real_percentage.innerHTML = (100 * percentage).toFixed(2) + '%';
