@@ -32,8 +32,9 @@ window.addEventListener('load', function () {
 
     markValid();
 
-    console.log('Submit form')
-
+    console.log('Submit form');
+    // TODO finish form submit
+    // show approriate box based on status.
 
   }
 
