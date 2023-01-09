@@ -26,6 +26,10 @@ header {
   padding-right: 5px;
 }
 
+.hide {
+  display: none;
+}
+
 .textarea {
   border: none;
 }
