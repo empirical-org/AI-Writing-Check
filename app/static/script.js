@@ -122,8 +122,8 @@ window.addEventListener('load', function () {
         'Authorization': `Bearer ${token}`,
       },
       redirect: 'follow',
-      referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: JSON.stringify(data) // body data type must match "Content-Type" header
+      referrerPolicy: 'no-referrer',
+      body: JSON.stringify(data)
     });
     return response.json(); // parses JSON response into native JavaScript objects
   }
