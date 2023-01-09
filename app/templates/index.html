@@ -48,9 +48,9 @@
       <div class='form-section p-5 mb-6'>
         <form id="js-form">
         <textarea id="js-textBox" class='textarea' placeholder='Enter text here' rows=15></textarea>
-        <div class='columns mt-4'>
-          <div class='column is-two-thirds p-2'>
-            <div id="js-counters" class='columns counters'>
+        <div class='columns mt-4 is-clearfix'>
+          <div class='column'>
+            <div id="js-counters" class='columns counters ml-1'>
               <div class='column'>
                 <div class='title mb-0'>100</div>
                 <div class='description'>Minimum words required</div>
@@ -59,20 +59,21 @@
                 <div id="js-wordCount" class='title mb-0'>0</div>
                 <div class='description'>Current words</div>
               </div>
-              <div class='column max-words'>
+              <div class='column'>
                 <div class='title mb-0'>400</div>
                 <div class='description'>Max words</div>
               </div>
             </div>
           </div>
 
-          <div class='column is-one-third '>
+          <div class='column is-3'>
             <input type="submit" id="js-submitButton" class='button is-primary is-large is-pulled-right' value="Check Text"
             />
           </div>
-          </form>
         </div>
-        <div class='columns mt-4'>
+        </form>
+
+        <div class='columns mt-4 '>
           <div class='column js-feedbacks'>
             <div id="js-warning" class="js-feedback p-5 warning content">
               <p>This free tool has no guaranteed uptime or support. It may not be available when there is heavy demand.</p>
