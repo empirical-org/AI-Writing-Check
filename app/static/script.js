@@ -14,7 +14,7 @@ window.addEventListener('load', function () {
   const humanBox = document.getElementById('js-human');
   const aiBox = document.getElementById('js-ai');
 
-  const minWords = 5;
+  const minWords = 100;
   const maxWords = 400;
   const endpoint = '/classify'
   const errorClass = 'errorBox';
@@ -37,9 +37,6 @@ window.addEventListener('load', function () {
     }
 
     markValid();
-
-    console.log('Submit form');
-
     showBox(processingBox);
     fetchAndUpdate(textBox.value);
   }
@@ -85,8 +82,7 @@ window.addEventListener('load', function () {
     postData(endpoint, { "instances": [{"data": words}]})
       .then((data) => {
         console.log(data); // JSON data parsed by `data.json()` call
-        const result = data.predictions[0];
-        const label = result.label;
+        const label = data.label;
 
         if (label == humanLabel) {
           showBox(humanBox);
@@ -113,12 +109,10 @@ window.addEventListener('load', function () {
   }
 
   async function postData(url = '', data = {}) {
-    const token = ""
     const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
       },
       redirect: 'follow',
       referrerPolicy: 'no-referrer',
@@ -126,5 +120,9 @@ window.addEventListener('load', function () {
     });
     return response.json(); // parses JSON response into native JavaScript objects
   }
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('js-textBox').focus();
 });
 
