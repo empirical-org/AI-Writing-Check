@@ -1,0 +1,99 @@
+body {
+  font-family: 'Adelle Sans';
+}
+
+section {
+  padding: 80px 0 40px;
+  border-top: 1px solid #ccc;
+}
+
+button {
+  border
+}
+
+header {
+  background: #00C2A2;
+}
+.white-text {
+  color: #fff;
+}
+
+.white-bar {
+  vertical-align: center;
+  font-size: 36px;
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.hide {
+  display: none;
+}
+
+.textarea {
+  border: none;
+}
+.errorBox {
+  color: rgba(235, 79, 71, 1);
+  background-color: rgba(235, 79, 71, 0.1);
+  border: 1px solid rgba(235, 79, 71, 0.54);
+}
+
+.errorBox .title {
+  color: rgba(235, 79, 71, 1);
+}
+
+.validBox {
+  border: 1px solid rgba(0, 194, 162, 1);
+  color: rgba(0, 194, 162, 1);
+  background-color: rgba(0, 194, 162, 0.1);
+}
+
+.validBox .title {
+  color: rgba(0, 194, 162, 1);
+}
+
+.form-section {
+  background: #FFFFFF;
+  border: 1px solid #DCDCDC;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+}
+footer {
+  background-color: #fff;
+}
+footer a {
+  display: inline;
+  margin-left: 30px;
+  color: #363636;
+}
+
+.counters {
+  border-radius: 10px;
+}
+
+.processing {
+  border-radius: 10px;
+  background-color: rgba(156, 156, 156, 0.1);
+  border: 1px solid #BBBBBB;
+}
+.human {
+  border: 1px solid rgba(0, 194, 162, 1);
+  border-radius: 10px;
+  color: rgba(0, 194, 162, 1);
+  background-color: rgba(0, 194, 162, 0.1);
+}
+.human h3 {
+  color: rgba(0, 194, 162, 1);
+}
+.ai, .warning {
+  border: 1px solid rgba(182, 109, 0, 1);
+  border-radius: 10px;
+  color: rgba(182, 109, 0, 1);
+  background-color: rgba(253, 241, 198, 0.4);
+}
+
+.ai h3 {
+  color: rgba(182, 109, 0, 1);
+}
+
