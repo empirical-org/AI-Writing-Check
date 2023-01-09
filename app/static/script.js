@@ -14,10 +14,9 @@ window.addEventListener('load', function () {
   const humanBox = document.getElementById('js-human');
   const aiBox = document.getElementById('js-ai');
 
-
   const minWords = 5;
   const maxWords = 400;
-  const endpoint = 'https://us-central1-aiplatform.googleapis.com/v1/projects/gpt-experiments-373801/locations/us-central1/endpoints/2125791383095607296:predict'
+  const endpoint = '/classify'
   const errorClass = 'errorBox';
   const validClass = 'validBox';
   const hideClass = 'hide';
