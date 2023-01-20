@@ -39,6 +39,16 @@ header {
   color: rgba(235, 79, 71, 1);
 }
 
+.processing-spinner {
+  display: inline-block;
+  width: 80px;
+  height: 15px;
+  background-image: url("../static/images/loading_icon.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .validBox {
   border: 1px solid rgba(0, 194, 162, 1);
   color: rgba(0, 194, 162, 1);
