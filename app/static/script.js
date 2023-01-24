@@ -25,6 +25,7 @@ window.addEventListener('load', function () {
   const eventSubmit = 'submit_form';
   const eventAIResult = 'ai_result';
   const eventHumanResult = 'human_result';
+  const eventErrorResult = 'error_result';
 
   form.addEventListener('submit', handleSubmit);
   textBox.addEventListener('input', handleTyping);
@@ -99,6 +100,7 @@ window.addEventListener('load', function () {
         }
       })
       .catch((error) => {
+        track(eventErrorResult);
         console.log(error);
       });
   }
