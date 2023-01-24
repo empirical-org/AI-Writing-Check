@@ -22,6 +22,9 @@ window.addEventListener('load', function () {
   const hideClass = 'hide';
   const humanLabel = 'Real';
   const aiLabel = 'Fake';
+  const eventSubmit = 'submit_form';
+  const eventAIResult = 'ai_result';
+  const eventHumanResult = 'human_result';
 
   form.addEventListener('submit', handleSubmit);
   textBox.addEventListener('input', handleTyping);
@@ -38,6 +41,7 @@ window.addEventListener('load', function () {
 
     markValid();
     showBox(processingBox);
+    track(eventSubmit);
     fetchAndUpdate(textBox.value);
   }
 
@@ -86,10 +90,12 @@ window.addEventListener('load', function () {
 
         if (label == humanLabel) {
           showBox(humanBox);
+          track(eventHumanResult);
         }
 
         if (label == aiLabel) {
           showBox(aiBox);
+          track(eventAIResult);
         }
       })
       .catch((error) => {
@@ -106,6 +112,15 @@ window.addEventListener('load', function () {
   function showBox(box) {
     hideAllBoxes();
     box.classList.remove(hideClass)
+  }
+
+  async function track(event, params = {}) {
+    console.log(`track ${event}`)
+    try {
+      gtag('event', event, params)
+    } catch(e) {
+      console.log(e)
+    }
   }
 
   async function postData(url = '', data = {}) {
