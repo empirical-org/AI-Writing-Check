@@ -86,7 +86,6 @@ window.addEventListener('load', function () {
   function fetchAndUpdate(words) {
     postData(endpoint, { "instances": [{"data": words}]})
       .then((data) => {
-        console.log(data); // JSON data parsed by `data.json()` call
         const label = data.label;
 
         if (label == humanLabel) {
@@ -101,7 +100,7 @@ window.addEventListener('load', function () {
       })
       .catch((error) => {
         track(eventErrorResult);
-        console.log(error);
+        showBox(warningBox);
       });
   }
 
@@ -117,11 +116,10 @@ window.addEventListener('load', function () {
   }
 
   async function track(event, params = {}) {
-    console.log(`track ${event}`)
     try {
       gtag('event', event, params)
     } catch(e) {
-      console.log(e)
+
     }
   }
 
