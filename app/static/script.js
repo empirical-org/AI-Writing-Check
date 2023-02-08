@@ -64,7 +64,7 @@ window.addEventListener('load', function () {
   }
 
   function countValid(count) {
-    return (count >= minWords || count >= maxWords);
+    return (count >= minWords && count <= maxWords);
   }
 
   function wordCount() {
