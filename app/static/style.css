@@ -39,6 +39,16 @@ header {
   color: rgba(235, 79, 71, 1);
 }
 
+.button.is-primary.resetButton {
+  background-color: #EB4F47;
+}
+
+.submitButton.is-primary:disabled {
+  color: #878787;
+  background-color: #CCCCCC;
+  border-color: #CCCCCC;
+}
+
 .processing-spinner {
   display: inline-block;
   width: 80px;

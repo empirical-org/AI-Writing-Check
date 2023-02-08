@@ -27,12 +27,22 @@ window.addEventListener('load', function () {
   const eventHumanResult = 'human_result';
   const eventErrorResult = 'error_result';
 
+  const buttonTextSubmit = 'Check Text';
+  const buttonTextReset = 'Reset';
+  const resetButtonClass = 'resetButton';
+
   form.addEventListener('submit', handleSubmit);
   textBox.addEventListener('input', handleTyping);
 
   function handleSubmit(event) {
     event.preventDefault();
 
+    const resetButton = submitButton.classList.contains(resetButtonClass);
+
+    resetButton ? handleReset() : handleFormSubmit();
+  }
+
+  function handleFormSubmit() {
     const count = wordCount();
 
     if (!countValid(count)) {
@@ -44,10 +54,11 @@ window.addEventListener('load', function () {
     showBox(processingBox);
     track(eventSubmit);
     fetchAndUpdate(textBox.value);
+    disableSubmit();
+    disableTextBox();
   }
 
   function handleTyping(event) {
-
     const count = wordCount();
 
     wordCountField.innerHTML = count;
@@ -63,6 +74,22 @@ window.addEventListener('load', function () {
     }
   }
 
+  function handleReset() {
+    showBox(warningBox);
+    enableSubmitButton();
+    enableTextBox();
+    textBox.value = '';
+    textBox.focus();
+  }
+
+  function disableTextBox() {
+    textBox.disabled = true;
+  }
+
+  function enableTextBox() {
+    textBox.disabled = false;
+  }
+
   function countValid(count) {
     return (count >= minWords && count <= maxWords);
   }
@@ -71,16 +98,36 @@ window.addEventListener('load', function () {
     return textBox.value.split(" ").length;
   }
 
+  function disableSubmit() {
+    submitButton.disabled = true;
+  }
+
+  function enableSubmit() {
+    submitButton.disabled = false;
+  }
+
   function markValid() {
     countersBox.classList.remove(errorClass);
     countersBox.classList.add(validClass);
-    submitButton.disabled = false;
+    enableSubmit();
   }
 
   function markInvalid() {
     countersBox.classList.add(errorClass);
     countersBox.classList.remove(validClass);
-    submitButton.disabled = true;
+    disableSubmit();
+  }
+
+  function enableResetButton() {
+    submitButton.value = buttonTextReset;
+    submitButton.classList.add(resetButtonClass);
+    enableSubmit();
+  }
+
+  function enableSubmitButton() {
+    submitButton.value = buttonTextSubmit;
+    submitButton.classList.remove(resetButtonClass);
+    enableSubmit();
   }
 
   function fetchAndUpdate(words) {
@@ -97,10 +144,13 @@ window.addEventListener('load', function () {
           showBox(aiBox);
           track(eventAIResult);
         }
+        enableResetButton();
       })
       .catch((error) => {
         track(eventErrorResult);
+        enableTextBox();
         showBox(warningBox);
+        enableSubmitButton()
       });
   }
 
